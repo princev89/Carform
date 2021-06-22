@@ -1,6 +1,6 @@
 function check(){
     var uname = document.getElementById('checkuname').value;
-    url = "https://api.apispreadsheets.com/data/11752/?query=select*from11752wherefull_name='" + uname + "'";
+    url = "https://api.apispreadsheets.com/data/14419/?query=select*from14419whereusername='" + uname + "'";
     fetch(url)
         .then(response => response.json())
         .then((json)=>{
@@ -12,4 +12,25 @@ function check(){
                 alert('unavailable try another');
             }
         })
+}
+
+
+
+
+function validateUser(){
+    var uname = document.getElementById('username').value;
+    var pass = document.getElementById('password').value;
+    alert(uname + " " + pass);
+    // url = "https://api.apispreadsheets.com/data/14419/?query=select*from14419whereusername='" + uname + "'";
+    // fetch(url)
+    //     .then(response => response.json())
+    //     .then((json)=>{
+    //         if(json['data'].length == 0){
+    //             alert("username available and set");
+    //             document.getElementById('username').value = uname;
+    //         }
+    //         else{
+    //             alert('unavailable try another');
+    //         }
+    //     })
 }

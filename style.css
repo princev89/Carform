@@ -1,0 +1,13 @@
+body {
+    background-color: #F05454;
+    
+  }
+
+  nav {
+    background-color: #125D98;
+    color: white;
+  }
+
+  .form-signin{
+      text-align: left;
+  }
