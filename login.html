@@ -64,8 +64,8 @@
                 pass = "'"+  pass +"'";
                 console.log(dbpass.length + " and " + pass.length);
                 if(pass == dbpass){
-                    var base_url = window.location.origin;
-                    base_url = base_url + '/home.html';
+                    var base_url = window.location.href;
+                    base_url = base_url.replace('login', 'html');
                     console.log(base_url);
                     console.log(base_url);
                     window.location.href = base_url;
