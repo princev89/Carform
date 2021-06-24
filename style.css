@@ -5,9 +5,20 @@ body {
 
   nav {
     background-color: #125D98;
+    text-align: center;
     color: white;
   }
 
   .form-signin{
       text-align: left;
   }
+
+  #info{
+    color: white;
+    font-weight: bold;
+  }
+
+  label{
+    font-weight: bold;
+  }
+

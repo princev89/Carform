@@ -17,7 +17,6 @@
 
 <body class="text-center">
     <nav>
-        <img src="" alt="Acms">
         <h1>ACMS</h1>
       </nav>
       <div class="container">
@@ -38,15 +37,27 @@
            
           </form>
           <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="validateUser()" >Sign in</button>
+          <br> <br>
           <div id="info"></div>
+          <br>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="resetPage()" >Reset Password</button>
 
     </div>
   
+
+
     <script>
+
+        function resetPage(){
+            var base_url = window.location.href;
+            base_url = base_url.replace('login', 'resetp');
+                    window.location.href = base_url;
+        }
         function validateUser(){
             var uname = document.getElementById('username').value;
     var pass = document.getElementById('password').value;
     var info = document.getElementById('info');
+    info.innerText = "Please wait....."
     
     url = "https://api.apispreadsheets.com/data/14419/?query=select*from14419whereusername='" + uname + "'";
     fetch(url)
@@ -63,15 +74,16 @@
                 var dbpass ="'"+  v_list['password'] +"'";
                 pass = "'"+  pass +"'";
                 console.log(dbpass.length + " and " + pass.length);
+                var base_url = window.location.href;
+                   
+                   
                 if(pass == dbpass){
-                    var base_url = window.location.href;
                     base_url = base_url.replace('login', 'home');
-                    console.log(base_url);
-                    console.log(base_url);
                     window.location.href = base_url;
                 }
                 else{
-                    info.innerHTML = "Password for username: " + uname + " is not correct";
+
+                    info.innerHTML = "Password for username: " + uname + " is not correct ";
                 }
             }
         })
